@@ -1,9 +1,5 @@
 language: java
-#sudo: true
-#before_install:
-#  - chmod +x mvnw
-#  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-
 script:
-  - mvn test
-  - mvn clen package
+  - chmod +x mvnw
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn test -B
