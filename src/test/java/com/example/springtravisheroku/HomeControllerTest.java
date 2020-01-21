@@ -14,7 +14,7 @@ public class HomeControllerTest extends SpringTravisHerokuApplicationTests {
 
     @Test
     public void check_saving_person() throws Exception {
-        mockMvc.perform(post("/save?name=Egor")).andExpect(status().isOk());
+        mockMvc.perform(post("/save?name=Petya")).andExpect(status().isOk());
     }
 
     @Test

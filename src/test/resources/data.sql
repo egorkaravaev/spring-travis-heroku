@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS PERSON;
+
+CREATE TABLE PERSON(
+    id           BIGSERIAL NOT NULL,
+    name         VARCHAR(255),
+
+    PRIMARY KEY (id)
+);
+
+INSERT INTO PERSON (id, name)
+VALUES (1, 'Egor');
