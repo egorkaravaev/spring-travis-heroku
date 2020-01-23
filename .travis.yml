@@ -1,5 +1,9 @@
 language: java
 sudo: required
+
+#before_install:
+#  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
+
 install: true
 script:
   - mvn install
@@ -9,9 +13,9 @@ services:
 
 after_success:
   - sh .travis/deploy_dockerhub.sh
-  - test “$TRAVIS_BRANCH” = “master” && sh .travis/deploy_heroku.sh
+#  - test “$TRAVIS_BRANCH” = “master” && sh .travis/deploy_heroku.sh
 
-#deploy:
-#  provider: heroku
-#  api_key:
-#    secure: 479872e2-377c-4623-946d-674237cbde2b
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU_API_KEY
