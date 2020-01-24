@@ -4,18 +4,46 @@ sudo: required
 #before_install:
 #  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
 
-install: true
-script:
-  - mvn install
+#install: true
+#script:
+#  - mvn install
 
 services:
   - docker
 
+# env:
+#   global:
+#     secure: IMAGE_NAME
+#     secure: HEROKU_API_KEY
+#     secure: DOCKER_USER
+#     secure: DOCKER_PASS
+
+env:
+  global:
+    - secure: VL1Y3tRUq8yV9KHH7ahRHO6cJVzp9tlP3k0lclbF5ePrIIiekR5BpDhkGZyYt2DlzgizCe98bAjACAq27YXE890/1lwPlGa4mOVKmY0jTBSXfWcDiBQSRKXr7T1Eh8GdviqjhYY8hH6WaDq36jUDZKgrZBxhAo6jdrJOgyDi0YCg/YODijVMxQq40TN0RaZrGfWzoYL6L3UrTHDBZVzOFKeXKRQUte4dLObtkm+Mmw+Vr3zwGhzgTBbbdYjH/518qJy8MvhF+I4pL2XhBVIkeGD8bdHD1ncGxQAui1ETl4zP1yAYqPNLZtg4/DFFjj2u4j4Ibgv25OH2z5+XhGXzKZi2hniJ46NsbD/UsMt2B2R1FDQEdN3tE54M7hqM71fxg2I9gRf/BPr+7kvXmK/+Xc2gyLKh8AeSvZ0OCNmD4e7hblb2xEhqrA75lMoAtJKERFleeDMeA1LGafpXk/RksOoiforqTyDtdYEUyJ63ksU0kSymPUygCxyaopCkX6esViFtofNLhspVLEM/LQrvKEhhuFokRAJpuUAOogIyvrB1pnjI4Lw27Xru5GgyvWAZGKF4FTvXb8kY4M6SUEr0zA4T60lnTHt9gTAu6WpDuZBHRTT7ouBG6VbOGztpt/Dw8jI3YyP0K77J8HeHP5HX7+Ot/hU9/V8pNDGDMhY6JsE=
+    - secure: Jo8xDMIK/BVdT6W1KEheSMYio28c6dJoManO8jDm3X1kraGihJCrCxBderxVlIkGOji7ZFvjU4cHrTKly5NUYjFoc5//B2Bzwjt11obXDW0LmQCbX0y8vRK7Z+pPOn0nYZnFWTUHkkN/gj44y22DJz738Lwfl/xTlbnw7gZsIkM+aEUwqcpyqxrAfOMUK9ZIeJhUOLOSNgWPHGgL/CToB6en8D8shVDiycwZsy6sgmkIUV2D/IWOKUzvYyJntaNXZ2JKNDPlAKWKNkb//WHHsOeMqvx9RmF6FZGLTaqa8eZQGQFcO70nudHsAtI1BsP/V/u862QEucsLeg7CY/2qX1Gp8n+9GR6bN+xaNDnfBMxihpwawoetGGmvRYzE8reC3Q/5s/dIyfp5Zt8TqF+gmdB9DO37BSPxFR6VJA3j8R61i43ng0ZeNn08H9iQTSOP2QSo8vv+o/bzorCfr4oIZlv/i+gqOj5SHfNNRaZOc2vH8V51dmyO0Tcs6oSaf5/i4ghpl1MKcp9i37hEOzO+Ifz4+C4/friPlGtmtqNbL0vrWNS3gkQmeJsWvaMdm4298D5jzWMen/z1oLC6jS/HRQ2BTTeNEqTsDOwSkihZ4W9KKIS84PUdq3v4UVhVmn+O5G3ckbIw/uLFgHk8fHZnXAyzEWFb8tsf8dldd/Apd3A=
+    - secure: iI6vXkk5W5GIjSHHbsq19Xhc4kukGp2dhMtS9mB7XP+VTH6Ia7lLJo0qasYaUG9L6I2X/m6IMB84xTkLjNt9Nl0WPL20XSCPvAXVjw8oCp2Q++7JdbUj8MAfKKTahhcLMqeldv5/FgynR960f3OGG5sb/I+59768EbQkyvlvXlK01i8+OJH+omSEs2FxOBUIBjmbYVDtEzUliQ+zDCR9ip5J0FJL5NnaVaVWD65M8pkngeOS1nvFY43C2/qe7TgWMNMnUtiguR6k5Bb5zXYURpSqhCslxEVWxQgCId27K157cTjNJpV8pRkIcep2S1Lq4bRsP4P46QOJ/gNUbBlzlmRqqG3k1Zam3Zyqiafkd0Flso0ThRDDFknxUdjJMw+rhyT2vgSeAFNFR9uFLah6XXlkaaYyvD7lwE76XnyVb2NcGH1a8dZD2KlVufWzyNMbDN/Seo9kujUeAiiA5q5mqKhg8anqO0khRVTVTVX3ZSgLNkw2ne9WpxBO9ag7Fezr7TxdNh1/k8kah3UxyrC6bX4YktbCaf1pgN4o0QOIi14682FR3mR2L51vk1zgEfemMYslRJ2IsSN1XLQs6GEkpZ3890e2GOd9x68h7Hhxt7/t/pyVA7MDiYsQV0956XTeT2DG94E+XFYy4mdyWuMdsnDC44G8YcNtZqdyCam3feM=
+    - secure: arTvzyvJexrKIp9ojt+IhEoeEcCRCzOljfE1LkvYvLsV+BAyW6KM1i155GyJOAX3g7CjwG2bLd1Qxyle5YpkjsDdEmGw+UZhHNTYMT7AFCxA0+byL2bfzGqVkXohikGIBLqMXHM5UPncaVuxvz09ApXDlEclEV3hI7ZJMuy0OXjBiqGfEMP/dbqA5dnam5+l3DjcAJSBvwl2xbwOS7sSTumNcfnmznRulLs9gLiLqz5nkLBv0lI67uRtZw2H8HJFQPPSYku6vohl/Dfs/1NbCz23tRpyRwEDdBiHvMnJC7W+LT2h/o80AgjN+VjrY1Zc2vewy37j6F156Y8bkMkUzl+46v65hfwnZJ6/Dm5jgja0Elyg0hWLW27inYbCTvuAw3dNnCZYLo6eYJsqYeugW4fSrJnR0+UvKbimFWU8xhawbml10obKnh4+snLyG+YFtfbe7CN+2SHx//j55sXIjhWmfFFYYj1YoeKoFRs53cX/K1XNSbkouCqNeOfoJut+ZHsD2Jpx19h0FArr17V/bNZZ4IoiWOtNs2QpgTd+CfbjRc/qXSLHpUM47iEKZbcOYXZ6yekMPQ+TXFMK8p0o/EYF+lgsZDlYogLS3J/u2kzSE8J9ggxSvVqzsR8bBmH9wEUdvafLviJhJZ7r9eQyFgWtIS9BHZMV6gKrCh5UnK0=
+
+script:
+  - mvn test
+  - mvn clean package
+
 after_success:
-  - sh .travis/deploy_dockerhub.sh
+  - export COMMIT=${TRAVIS_COMMIT::7}
+  - export TAG=`if [ ! -z "$TRAVIS_TAG" ]; then echo "$TRAVIS_TAG"; else echo "$TRAVIS_BRANCH--$COMMIT"; fi`
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker-compose build
+  - docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TAG
+  - docker push $IMAGE_NAME:$TAG
+#  - sh .travis/deploy_dockerhub.sh
 #  - test “$TRAVIS_BRANCH” = “master” && sh .travis/deploy_heroku.sh
 
 deploy:
   provider: heroku
   api_key:
-    secure: $HEROKU_API_KEY
+    secure: "$HEROKU_API_KEY"
+  app: spring-travis-heroku
+  on:
+    tags: true
+    repo: "$IMAGE_NAME"
