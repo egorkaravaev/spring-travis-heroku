@@ -14,10 +14,10 @@ services:
 
 # env:
 #   global:
-#     secure: IMAGE_NAME
 #     secure: HEROKU_API_KEY
 #     secure: DOCKER_USER
 #     secure: DOCKER_PASS
+#     secure: IMAGE_NAME
 
 env:
   global:
@@ -33,7 +33,7 @@ script:
 after_success:
   - export COMMIT=${TRAVIS_COMMIT::7}
   - export TAG=`if [ ! -z "$TRAVIS_TAG" ]; then echo "$TRAVIS_TAG"; else echo "$TRAVIS_BRANCH--$COMMIT"; fi`
-  - docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - docker-compose build
   - docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TAG
   - docker push $IMAGE_NAME:$TAG
