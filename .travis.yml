@@ -35,8 +35,8 @@ after_success:
   - export TAG=`if [ ! -z "$TRAVIS_TAG" ]; then echo "$TRAVIS_TAG"; else echo "$TRAVIS_BRANCH--$COMMIT"; fi`
   - docker login -u egorkaravaev -p karavaev1997
   - docker-compose build
-  - docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TAG
-  - docker push $IMAGE_NAME:$TAG
+  - docker tag egorkaravaev/timetracker:latest egorkaravaev/timetracker:$TAG
+  - docker push egorkaravaev/timetracker:$TAG
 #  - sh .travis/deploy_dockerhub.sh
 #  - test “$TRAVIS_BRANCH” = “master” && sh .travis/deploy_heroku.sh
 
