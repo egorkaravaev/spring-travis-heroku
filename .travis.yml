@@ -3,6 +3,7 @@ sudo: required
 
 before_install:
   - chmod +x mvnw
+  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
 #  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
 
 #install: true
@@ -34,6 +35,7 @@ after_success:
   - export COMMIT=${TRAVIS_COMMIT::7}
   - export TAG=`if [ ! -z "$TRAVIS_TAG" ]; then echo "$TRAVIS_TAG"; else echo "$TRAVIS_BRANCH--$COMMIT"; fi`
   - docker login -u egorkaravaev -p karavaev1997
+#  - echo "$ HEROKU_PASSWORD" | docker login -u "$ HEROKU_USERNAME" --password-stdin registry.heroku.com
 #  - docker-compose build
   - docker build -t egorkaravaev/spring-travis-heroku .
   - docker push egorkaravaev/spring-travis-heroku
@@ -51,3 +53,11 @@ deploy:
   on:
     tags: true
     repo: egorkaravaev/spring-travis-heroku
+
+#deploy:
+#  provider: script
+#  script:
+#    docker push registry.heroku.com/spring-travis-heroku/web;
+#    heroku container:release web --app spring-travis-heroku
+#  on:
+#    branch: master
