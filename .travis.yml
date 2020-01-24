@@ -1,7 +1,8 @@
 language: java
 sudo: required
 
-#before_install:
+before_install:
+  - chmod +x mvnw
 #  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
 
 #install: true
